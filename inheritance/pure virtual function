@@ -1,0 +1,15 @@
+-->pure virtual function: Declared in superclass's .h file and set to 0(null).
+
+-->An absent function that has not been implemented.
+
+–->Must be implemented by any subclass, or it cannot be used.
+
+–-> A way of forcing subclasses to add certain important behavior.
+
+class Employee {
+    ...
+    virtual void work() = 0; // every employee does
+    // some kind of work
+};
+
+– FYI: In Java, this is called an abstract method.
