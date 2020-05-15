@@ -1,0 +1,18 @@
+-->pure virtual base class: One where every member function is declared as pure virtual. 
+    (Also usually has no member variables.)
+
+–->Essentially not a superclass in terms of inheriting useful code.
+
+–->But useful as a list of requirements for subclasses to implement.
+
+–->Example: Demand that all shapes have an area, perimeter, # sides, ...
+
+class Shape
+{
+     // pure virtual class; extend me!
+    virtual double area() const = 0;
+    virtual double perimeter() const = 0;
+    virtual int sides() const = 0;
+};
+
+–->FYI: In Java, this is called an interface.
