@@ -1,5 +1,0 @@
-• Composition is an alternative to inheritance; instead of inheriting aclass, you have an instance (or instances) of that class as an instance variable.
-
-• E.g. SortedVector contains a Vector.
-
-• Is-a vs. Has-a
