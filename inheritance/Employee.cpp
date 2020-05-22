@@ -9,7 +9,11 @@ Employee::Employee(string name,int YearsWorked)
     this->name=name;
     this->YearsWorked=YearsWorked;
 }
+//other way to write a constructor
+// Employee::Employee(string name_,int YearsWorked_):name{name_},YearsWorked{YearsWorked_}
+// {
 
+// }
 int Employee::getHoursWorkedPerWeek()
 {
     return 40; //question requirement
