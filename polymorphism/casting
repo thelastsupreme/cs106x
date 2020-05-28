@@ -1,0 +1,12 @@
+• When you store a subclass in a superclass pointer, you cannot utilize
+any additional behavior from the subclass.
+
+Employee *zach = new HeadTA(“Zach”, 1, “CS106X”);
+cout << zach->getFavoriteProgrammingLanguage() << endl; // compile error!
+
+• If you would like to use this behavior, you must cast:
+
+Employee *zach = new HeadTA(“Zach”, 1, “CS106X”);
+cout << ((HeadTA *)zach)->getFavoriteProgrammingLanguage() << endl;
+
+• Be careful to not cast a variable to something it is not!

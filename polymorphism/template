@@ -1,0 +1,13 @@
+• With templates, we create one class that works with any type of parameter:
+
+template<typename T>
+class Vector {
+…
+}
+
+• This is also polymorphism; C++ knows to execute different code for
+Vector<int> vs. Vector<string> , even though they are all
+Vectors.
+
+• At compile-time, C++ generates a version of this class for each type
+it will be used with. This is called compile-time polymorphism.

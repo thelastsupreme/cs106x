@@ -1,0 +1,18 @@
+-->Polymorphism is the the ability for the same code to
+be used with different types of objects and behave
+differently with each.
+
+example::
+
+Lawyer *ken = new Lawyer(“Ken”, 10, “GWU”);
+
+HeadTA *zach = new HeadTA(“Zach”, 1, “CS106X”);
+
+
+//Employee class here is a superclass of both Lawyer and HeadTA
+Vector<Employee *> all = { ken, zach };
+
+//the same function call works differently for different Employee
+cout << all[0]->getHoursWorkedPerWeek() << endl; // 40
+
+cout << all[1]->getHoursWorkedPerWeek() << endl; // 20
