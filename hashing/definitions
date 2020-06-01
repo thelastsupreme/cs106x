@@ -1,0 +1,5 @@
+• Collision: when two distinct elements map to the same index in a hash table
+
+• Collision resolution: a method for resolving collisions
+
+• Separate chaining: form a linked list at each index so multiple elements can share an index
