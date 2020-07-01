@@ -34,9 +34,9 @@ int editDistance(string a ,string b){
     for (int i = 1; i <b.size()+1; i++){
         for(int j=1;j<a.size()+1;j++){
             if(a[i-1]==b[j-1]){
-                diff=0;
+                diff=0;  //substitution not needed
             }else{
-                diff=1;
+                diff=1;  //substitution needed
             }
             int x=min(temp[i-1][j]+1,temp[i][j-1]+1);
             temp[i][j]=min(x,temp[i-1][j-1]+diff);
