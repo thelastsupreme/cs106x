@@ -23,35 +23,31 @@ ED(i,j)=min{ ED(i , j − 1) + inscost(B[j ]),           }
            { ED(i − 1, j − 1) + substcost(A[i ], B[j ])}
 ********************************************************/
 int editDistance(string a ,string b){
-    vector<vector<int>>temp(b.size()+1,vector<int>(a.size()+1,0));
-    for(int i=0;i<b.size()+1;i++){
+    vector<vector<int>>temp(a.size()+1,vector<int>(b.size()+1,0));
+    for(int i=0;i<a.size()+1;i++){
         temp[i][0]=i;
     }
-    for(int j=0;j<a.size()+1;j++){
+    for(int j=0;j<b.size()+1;j++){
         temp[0][j]=j;
     }
     int diff;
-    for (int i = 1; i <b.size()+1; i++){
-        for(int j=1;j<a.size()+1;j++){
-            if(a[i-1]==b[j-1]){
-                diff=0;  //substitution not needed
-            }else{
-                diff=1;  //substitution needed
-            }
+    for (int i = 1; i <a.size()+1; i++){
+        for(int j=1;j<b.size()+1;j++){
+            diff=(a[i-1]==b[j-1])?0:1;
             int x=min(temp[i-1][j]+1,temp[i][j-1]+1);
             temp[i][j]=min(x,temp[i-1][j-1]+diff);
         }
     }
-   for(int i=0;i<b.size()+1;i++){
-        for(int j=0;j<a.size()+1;j++){
+   for(int i=0;i<a.size()+1;i++){
+        for(int j=0;j<b.size()+1;j++){
             cout<<temp[i][j]<<"  ";
         }
         cout<<endl;
     }
-    return temp[b.size()][a.size()];
+    return temp[a.size()][b.size()];
 }
 
 int main(){
-    int k=editDistance("editing","distance");
+    int k=editDistance("aac","abac");
     cout<<"Cost is : "<<k;
 }
