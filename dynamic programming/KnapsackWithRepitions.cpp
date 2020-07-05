@@ -13,19 +13,19 @@ using namespace std;
 *************************************************/
 
 int knapsackDynamic(int W,vector<int>w,vector<int>v){ //weight and value vectors
-    vector<int>temp(W+1);
-    for (int u = 0; u <W+1; u++){
-        for(int i=0;i<w.size();i++){
+    vector<int>temp(W+1,0);
+    for (int u = 1; u <W+1; u++){
+        for(int i=0;i<w.size()+1;i++){
             if(w[i]<=u){
                 temp[u]=max(temp[u],temp[u-w[i]]+v[i]);    //currweight-weight from array and add its value to urs
             }
         }
     }
-    cout<<"constructed value array : |";
-    for(int i=0;i<temp.size();i++){
-        cout<<temp[i]<<" | ";
-    }
-    cout<<endl;
+    // cout<<"constructed value array : |";
+    // for(int i=0;i<temp.size();i++){
+    //     cout<<temp[i]<<" | ";
+    // }
+    // cout<<endl;
     return temp[W];
 }
 //pseudo code for recursive
@@ -39,8 +39,8 @@ for i in range ( len (w) ) :
     if w[ i ] <= u :
         T[ u ] = max(T[ u ] ,knapsack (w, v , u − w[ i ] ) + v [ i ] )
 return T[ u ]
- */
+*/
 int main(){
-    int x=knapsackDynamic(10,{6,3,4,2},{30,14,16,9});
+    int x=knapsackDynamic(383,{96, 43, 28, 37, 92, 5, 3, 54, 93},{359, 963, 465, 706, 146, 282, 828, 962, 492});
     cout<<"max profit is : "<<x; //48
 }

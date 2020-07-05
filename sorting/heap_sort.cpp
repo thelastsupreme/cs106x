@@ -30,11 +30,18 @@ void heap_sort(vector<int>&A)
     for(int i=A.size()/2-1;i>=0;i--)
         heapify(A,A.size(),i);
 
+    // print(A);
+    //     cout<<endl;
     for(int i=A.size()-1;i>0;i--)
     {
         swap(A[0],A[i]);
-
+        // cout<<"after swap"<<endl;
+        // print(A);
+        // cout<<endl;
         heapify(A,i,0);
+        // cout<<"after heapify"<<endl;
+        // print(A);
+        // cout<<endl;
     }
 }
 
