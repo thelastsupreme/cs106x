@@ -54,6 +54,22 @@ int eggDrop(int eggs,int floors){
     }
     return t[key]=res;
 }
+
+//best solution
+int solve(int A, int B) {  //A eggs, B floors
+
+    vector<int>dp(A+1, 0);
+    int m;
+    for(m = 0; dp[A] < B; m++)
+    {
+        for(int k = A; k>0; k--)
+        {
+            dp[k] += dp[k-1] + 1;
+        }
+    }
+    return m;
+}
+
 //**********pseudo code for O(N^3)********************
 //  for (int i = 2; i <=eggs ; i++) {
 //             for (int j = 2; j <=floors ; j++) {
@@ -66,5 +82,5 @@ int eggDrop(int eggs,int floors){
 //             }
 //         }
 int main(){
-    cout<<eggDrop(2,100);
+    cout<<solve(2,100);
 }
