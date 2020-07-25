@@ -30,6 +30,8 @@ int PalindromePart(string &A,int i,int j){
     //     int tempans=PalindromePart(A,i,k)+PalindromePart(A,k+1,j)+1; //+1 cause we just made a partition
     //     res=min(res,tempans);
     // }
+    if(t[i][i]!=-1)
+        return t[i][j];
     for(int k=i;k<=j-1;k++){
         int left=0,right=0;
         //the below if else ladder helps in further optimization
@@ -56,3 +58,4 @@ int main(){
     string s="nitik"; //op 2
     cout<<PalindromePart(s,0,s.size()-1);
 }
+
