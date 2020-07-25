@@ -63,5 +63,5 @@ string SCSS(string A,string B){
 }
 
 int main(){
-    cout<<SCSS("AGGTAB","GXTXAYB"); //op AGGXTXAYB
+    cout<<SCSS("aabcc","GXTXAYB"); //op AGGXTXAYB
 }
