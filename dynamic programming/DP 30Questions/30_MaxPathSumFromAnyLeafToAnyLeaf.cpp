@@ -17,7 +17,7 @@ int helper(TreeNode* A,int &res){
     
     /*critical step*/ 
     int temp=max(l,r)+A->val;       //here you are not cheking if your own value exceeds l+r+A->val
-    int ans=max(temp,l+r+A->val);
+    int ans= l+r+A->val ;           // modified this step
     res=max(ans,res);
     return temp;
 }

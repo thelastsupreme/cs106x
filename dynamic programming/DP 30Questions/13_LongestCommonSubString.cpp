@@ -28,5 +28,5 @@ int LCS(string A,string B){
 }
 
 int main(){
-    cout<<LCS("abcdgh","abedfh"); //op:2("ab") 
+    cout<<LCS("edcba","edcbaba"); //op:2("ab") 
 }
